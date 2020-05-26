@@ -1,6 +1,7 @@
 #!~/Miniconda3/bin/python3.7
 import string
 
+
 def text_analyzer(*arg):
     '''This Functions analyze the text'''
     up_letters = 0
@@ -15,7 +16,8 @@ def text_analyzer(*arg):
         txt = input("What is the text to analyse?\n")
     else:
         txt = arg[0]
-    if type(txt) != type("STRING"):
+    print(isinstance(txt, str))
+    if isinstance(txt, str) is False:
         print("ERROR")
         return
 
@@ -28,8 +30,8 @@ def text_analyzer(*arg):
             pct_marks += 1
         elif ch in string.whitespace:
             spcs += 1
-    print("the text contains ", len(txt),"characters\n")
-    print(up_letters,"upper letters\n")
-    print(lower_letters,"lower letters\n")
-    print(pct_marks,"punctuation marks\n")
-    print(spcs,"spaces")
+    print("the text contains ", len(txt), "characters\n")
+    print(up_letters, "upper letters\n")
+    print(lower_letters, "lower letters\n")
+    print(pct_marks, "punctuation marks\n")
+    print(spcs, "spaces")
